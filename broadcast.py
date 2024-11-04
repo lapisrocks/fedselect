@@ -1,12 +1,12 @@
 import torch
-from typing import OrderedDict as OrderedDictType
+from typing import OrderedDict
 
 
 def broadcast_server_to_client_initialization(
-    server_weights: OrderedDictType[str, torch.Tensor],
-    mask: OrderedDictType[str, torch.Tensor],
-    client_initialization: OrderedDictType[str, torch.Tensor],
-) -> OrderedDictType[str, torch.Tensor]:
+    server_weights: OrderedDict[str, torch.Tensor],
+    mask: OrderedDict[str, torch.Tensor],
+    client_initialization: OrderedDict[str, torch.Tensor],
+) -> OrderedDict[str, torch.Tensor]:
     """Broadcasts server weights to client initialization for non-masked parameters.
 
     Args:
@@ -27,9 +27,9 @@ def broadcast_server_to_client_initialization(
 
 
 def div_server_weights(
-    server_weights: OrderedDictType[str, torch.Tensor],
-    server_mask: OrderedDictType[str, torch.Tensor],
-) -> OrderedDictType[str, torch.Tensor]:
+    server_weights: OrderedDict[str, torch.Tensor],
+    server_mask: OrderedDict[str, torch.Tensor],
+) -> OrderedDict[str, torch.Tensor]:
     """Divides server weights by mask values where mask is non-zero.
 
     Args:
@@ -49,10 +49,10 @@ def div_server_weights(
 
 
 def add_masks(
-    server_dict: OrderedDictType[str, torch.Tensor],
-    client_dict: OrderedDictType[str, torch.Tensor],
+    server_dict: OrderedDict[str, torch.Tensor],
+    client_dict: OrderedDict[str, torch.Tensor],
     invert: bool = True,
-) -> OrderedDictType[str, torch.Tensor]:
+) -> OrderedDict[str, torch.Tensor]:
     """Accumulates client masks into server mask dictionary.
 
     Args:
@@ -75,11 +75,11 @@ def add_masks(
 
 
 def add_server_weights(
-    server_weights: OrderedDictType[str, torch.Tensor],
-    client_weights: OrderedDictType[str, torch.Tensor],
-    client_mask: OrderedDictType[str, torch.Tensor],
+    server_weights: OrderedDict[str, torch.Tensor],
+    client_weights: OrderedDict[str, torch.Tensor],
+    client_mask: OrderedDict[str, torch.Tensor],
     invert: bool = True,
-) -> OrderedDictType[str, torch.Tensor]:
+) -> OrderedDict[str, torch.Tensor]:
     """Accumulates masked client weights into server weights.
 
     Args:

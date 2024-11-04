@@ -11,8 +11,8 @@ from typing import Dict, List, OrderedDict, Tuple, Optional, Any
 from utils.options import lth_args_parser
 from utils.train_utils import prepare_dataloaders, get_data
 from pflopt.optimizers import MaskLocalAltSGD, local_alt
-from lottery_ticket import init_mask, init_mask_zeros, delta_update
-from masked_fedavg import (
+from lottery_ticket import init_mask_zeros, delta_update
+from broadcast import (
     broadcast_server_to_client_initialization,
     div_server_weights,
     add_masks,
