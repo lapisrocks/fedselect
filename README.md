@@ -13,3 +13,17 @@ by [Rishub Tamirisa](https://rishub-tamirisa.github.io/research/), [Chulin Xie](
 
 See our paper on [arXiv](https://arxiv.org/abs/2404.02478).
 
+
+## Citation
+
+```
+@misc{tamirisa2024fedselectpersonalizedfederatedlearning,
+      title={FedSelect: Personalized Federated Learning with Customized Selection of Parameters for Fine-Tuning}, 
+      author={Rishub Tamirisa and Chulin Xie and Wenxuan Bao and Andy Zhou and Ron Arel and Aviv Shamsian},
+      year={2024},
+      eprint={2404.02478},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2404.02478}, 
+}
+```
