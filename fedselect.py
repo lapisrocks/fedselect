@@ -137,11 +137,7 @@ def fedselect_algorithm(
     client_state_dicts = {i: copy.deepcopy(initial_state_dict) for i in idxs_users}
     client_state_dict_prev = {i: copy.deepcopy(initial_state_dict) for i in idxs_users}
     client_masks = {i: None for i in idxs_users}
-    client_masks_prev = (
-        {i: init_mask(model) for i in idxs_users}
-        if not args.invert
-        else {i: init_mask_zeros(model) for i in idxs_users}
-    )
+    client_masks_prev = {i: init_mask_zeros(model) for i in idxs_users}
     server_accumulate_mask = OrderedDict()
     server_weights = OrderedDict()
     lth_iters = args.lth_epoch_iters
@@ -184,7 +180,7 @@ def fedselect_algorithm(
                     client_state_dict_prev[i],
                     client_masks_prev[i],
                     bound=prune_target,
-                    invert=args.invert,
+                    invert=True,
                 )
                 client_state_dict_prev[i] = copy.deepcopy(client_state_dicts[i])
                 client_masks_prev[i] = copy.deepcopy(client_mask)

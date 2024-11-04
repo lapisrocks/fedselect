@@ -48,8 +48,6 @@ def lth_args_parser():
     parser.add_argument("--bs", type=int, default=128, help="test batch size")
     parser.add_argument("--lth_freq", type=int, default=1, help="frequency of lth")
     parser.add_argument("--pretrained_init", action="store_true")
-    parser.add_argument("--rewind", action="store_true")
-    parser.add_argument("--invert", action="store_true")
     parser.add_argument("--clipgradnorm", action="store_true")
     parser.add_argument("--num_samples", type=int, default=-1)
     parser.add_argument("--test_size", type=int, default=-1)
