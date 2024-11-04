@@ -169,7 +169,7 @@ def get_mask_from_delta(
     prev_state_dict: OrderedDict,
     current_mask: OrderedDict,
     bound: float = 0.80,
-    invert: bool = False,
+    invert: bool = True,
 ) -> OrderedDict:
     """Generate new mask based on parameter changes between states.
 
